@@ -1,0 +1,328 @@
+/* --- RESET BÁSICO Y ESTILOS GLOBALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Facilita el manejo de padding y border */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Fuente sans-serif estándar y legible */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Color de texto principal (gris oscuro) */
+    background-color: #f4f4f4; /* Fondo general gris muy claro */
+}
+
+a {
+    text-decoration: none; /* Quita subrayado de enlaces */
+    color: inherit; /* Hereda el color del texto padre por defecto */
+    transition: color 0.3s ease; /* Transición suave para hover */
+}
+
+img {
+    max-width: 100%; /* Hace las imágenes responsivas */
+    height: auto;
+    display: block; /* Evita espacio extra debajo de las imágenes */
+}
+
+ul {
+    list-style: none; /* Quita los puntos de las listas */
+}
+
+/* --- CONTENEDOR PRINCIPAL (Opcional, para centrar contenido) --- */
+/* Si quieres que el contenido principal no ocupe todo el ancho en pantallas grandes */
+/* Puedes descomentar esto y envolver el header, main y footer en un <div class="container"> */
+/*
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+*/
+
+/* --- HEADER --- */
+header {
+    background-color: #ffffff; /* Fondo blanco para el header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background-color: #003366; /* Azul oscuro universitario */
+    color: #ffffff; /* Texto blanco */
+    padding: 8px 40px; /* Padding vertical y horizontal */
+    display: flex;
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center;
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
+}
+
+.top-bar .social-links span {
+    margin-right: 15px; /* Espacio entre elementos */
+}
+
+.top-bar .social-links a {
+    color: #ffffff;
+    margin-left: 10px; /* Espacio entre iconos sociales */
+    font-size: 1.1em; /* Tamaño de los iconos */
+}
+
+.top-bar .social-links a:hover {
+    color: #cccccc; /* Color más claro en hover */
+}
+
+.top-bar i { /* Añade un pequeño margen a los iconos si se usan junto a texto */
+    margin-right: 5px;
+}
+
+.perfil-button {
+    background-color: #0056b3; /* Azul un poco más claro */
+    color: #ffffff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.perfil-button:hover {
+    background-color: #004494; /* Azul más oscuro en hover */
+}
+
+/* --- Navegación Principal (Nav) --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px; /* Padding vertical y horizontal */
+    background-color: #ffffff; /* Fondo blanco */
+    border-bottom: 1px solid #eee; /* Línea sutil de separación */
+}
+
+nav .logo img {
+    max-height: 50px; /* Ajusta según el tamaño de tu logo */
+}
+
+nav .main-menu {
+    display: flex;
+    align-items: center;
+}
+
+nav .main-menu li {
+    margin-left: 25px; /* Espacio entre elementos del menú */
+}
+
+nav .main-menu a {
+    color: #003366; /* Azul oscuro para enlaces de menú */
+    font-weight: bold;
+    padding: 10px 5px; /* Padding para hacer el área clickeable más grande */
+    position: relative; /* Para la línea inferior en hover */
+    text-transform: uppercase; /* Mayúsculas como en el HTML */
+    font-size: 0.9em;
+}
+
+/* Efecto hover para enlaces del menú (línea inferior) */
+nav .main-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #0056b3; /* Azul de acento */
+    transition: width 0.3s ease;
+}
+
+nav .main-menu a:hover::after {
+    width: 100%;
+}
+
+/* Estilo especial para el botón de Soporte Técnico */
+nav .main-menu .support-button a {
+    background-color: #D4AF37; /* Un color de acento (dorado/amarillo) */
+    color: #003366; /* Texto azul oscuro */
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav .main-menu .support-button a:hover {
+    background-color: #c09b2d; /* Dorado más oscuro */
+    color: #ffffff; /* Texto blanco en hover */
+}
+/* Quitar la línea inferior para el botón especial */
+nav .main-menu .support-button a::after {
+    display: none;
+}
+
+
+/* --- MAIN CONTENT --- */
+main {
+    padding: 40px; /* Espacio alrededor del contenido principal */
+    background-color: #f0f4f8; /* Fondo ligeramente azulado/grisáceo */
+    min-height: calc(100vh - 250px); /* Asegura que el footer quede abajo (ajustar px según altura de header+footer) */
+}
+
+.main-content {
+    max-width: 1100px; /* Ancho máximo para el contenido */
+    margin: 0 auto; /* Centrar el contenido */
+    background-color: #ffffff; /* Fondo blanco para la sección principal */
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.main-content .image-container {
+    margin-bottom: 30px; /* Espacio debajo de la imagen */
+}
+
+.main-content .image-container img {
+    border-radius: 5px; /* Bordes redondeados para la imagen */
+    width: 100%; /* Asegura que ocupe el contenedor */
+    height: auto;
+}
+
+/* --- Accesos Directos (Shortcuts) --- */
+.shortcuts {
+    display: flex;
+    justify-content: space-around; /* Distribuye el espacio */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+    gap: 20px; /* Espacio entre los elementos */
+    margin-top: 20px;
+}
+
+.shortcuts a {
+    display: flex;
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: center;
+    justify-content: center;
+    background-color: #e9f1f9; /* Fondo azul muy pálido */
+    color: #003366; /* Texto azul oscuro */
+    padding: 25px 20px;
+    border-radius: 8px;
+    min-width: 150px; /* Ancho mínimo para cada caja */
+    text-align: center;
+    border: 1px solid #d1e3f8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shortcuts a:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 4px 10px rgba(0, 51, 102, 0.15); /* Sombra más pronunciada */
+    background-color: #dbe8f5;
+}
+
+.shortcuts .icon {
+    font-size: 2.5em; /* Tamaño grande para el icono emoji */
+    margin-bottom: 10px;
+}
+
+.shortcuts span:not(.icon) {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: #003366; /* Mismo azul oscuro que la top-bar */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: auto; /* Empuja el footer al fondo si el contenido es corto */
+}
+
+/* --- AJUSTES RESPONSIVOS (Básicos) --- */
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column; /* Apila los elementos */
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .top-bar .contact-info,
+    .top-bar .social-links {
+        margin-bottom: 10px;
+    }
+
+    .top-bar .user-actions {
+        margin-top: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav .logo {
+        margin-bottom: 15px;
+    }
+
+    nav .main-menu {
+        flex-direction: column;
+        width: 100%;
+        align-items: center; /* Centra los items del menú */
+    }
+
+    nav .main-menu li {
+        margin-left: 0;
+        margin-bottom: 10px; /* Espacio vertical entre items */
+        width: 100%;
+        text-align: center; /* Centra texto del link */
+    }
+
+    nav .main-menu a {
+        display: block; /* Ocupa todo el ancho */
+        padding: 10px;
+    }
+
+    /* Quitar efecto línea en móvil o ajustar */
+    nav .main-menu a::after {
+        display: none;
+    }
+
+     nav .main-menu .support-button a {
+         display: inline-block; /* Para que el padding funcione bien */
+         width: auto; /* Ajusta el ancho al contenido */
+     }
+
+
+    main {
+        padding: 20px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .shortcuts {
+        flex-direction: column; /* Apila los accesos directos */
+        align-items: stretch; /* Estira los elementos al ancho completo */
+    }
+
+    .shortcuts a {
+        min-width: auto; /* Quita el ancho mínimo */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin-bottom: 15px; /* Espacio entre cajas apiladas */
+    }
+}
+
+@media (max-width: 480px) {
+     body {
+         font-size: 15px; /* Ligeramente más pequeño en móviles */
+     }
+     .top-bar, nav, main, .main-content, footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .shortcuts a {
+        padding: 20px 15px;
+    }
+    .shortcuts .icon {
+        font-size: 2em;
+    }
+}

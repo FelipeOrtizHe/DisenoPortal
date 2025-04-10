@@ -25,38 +25,128 @@ a {
 }
 
 /* Header */
-header .top-bar {
+  header .top-bar {
     background-color: #003366;
-    color: white; 
-    padding: 8px 25px; 
+    color: white;
+    padding: 0 0; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
-    gap: 15px; 
+    flex-wrap: wrap;
+    gap: 15px;
     font-size: 0.9em;
-}
-
-.top-bar .contact-info span {
-    margin-right: 10px; 
-}
-.top-bar .contact-info span:last-child {
-    margin-right: 0;
-}
-
-.top-bar .social-links span {
-    margin-right: 8px;
-}
-
-.top-bar .social-links a {
+  }
+  
+  .top-bar .perfil-button {
+    background-color: #007bff;
     color: white;
-    margin-left: 5px; 
-    font-size: 1.3em; 
+    padding: 0 15px;
+    border-radius: 0 0 0 0;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: auto;
+  }
+  
+  .top-bar .perfil-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  
+  header nav {
+    background-color: white;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  header nav .logo {
+    position: relative; 
+    z-index: 1; 
+    display: inline-flex; 
+    align-items: center;  
+    vertical-align: middle; 
+  
+ 
+    padding: 10px 30px 10px 25px;
+    
+  
+    overflow: hidden; 
+    border-radius: 6px; 
+  }
+  
+  header nav .logo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #003366; 
+    z-index: -1; 
+  
+    
+    clip-path: polygon(
+      0% 0%,      
+      85% 0%,      
+      100% 100%,   
+      0% 100%      
+    );
+  
+   
+  }
+  
+  header nav .logo img {
+    height: 45px; 
+    display: block;
+    position: relative; 
+    z-index: 2; 
+  }
+  
+
+.top-bar .social-links-container {
+    margin-left: auto;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+  .top-bar .social-links {
+    display: flex; 
+    align-items: center; 
+}
+  
+  .top-bar .contact-info {
+    margin-right: 20px;
+    
+  }
+  
+  .top-bar .social-links span {
+    margin-right: 10px;
+    margin-left: 200px;
+  }
+  
+  .top-bar .social-links a {
+    color: white;
+    margin-left: 10px;
+    font-size: 1.3em;
     transition: color 0.10s ease;
-}
-.top-bar .social-links a:hover {
-    color: #cccccc; 
-}
+  }
+  
+  .top-bar .social-links a:hover {
+    color: #cccccc;
+  }
 
 .top-bar .perfil-button {
     background-color: #007bff;
@@ -70,7 +160,7 @@ header .top-bar {
     transition: background-color 0.3s ease;
 }
 .top-bar .perfil-button:hover {
-    background-color: #0056b3;
+    background-color: #003366;
 }
 
 /* Navegación Principal */
@@ -109,7 +199,6 @@ header .main-menu {
 header .main-menu li a {
     color: #333;
     font-weight: bold;
-    padding: 5px 0; 
     display: block; 
     transition: color 0.3s ease;
 }
@@ -117,16 +206,21 @@ header .main-menu li a:hover {
     color: #007bff;
 }
 
+header .Support-button a i {
+    margin-right: 10px; 
+  }
+
 header .Support-button a {
     background-color: #007bff;
-    color: white !important; 
-    padding: 10px 20px;
+    color: white !important;
+    padding: 15px 20px; 
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-}
+  }
+
 header .Support-button a:hover {
-    background-color: #0056b3;
+    background-color: #003366;
     color: white !important;
 }
 
@@ -188,13 +282,17 @@ main {
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
+.shortcuts a:hover .icon {
+    color: #0056b3; 
+  }
 .shortcuts .icon {
-    font-size: 2em; /* Iconos un poco más grandes */
+    font-size: 2em; 
     margin-right: 15px;
     color: #007bff;
     width: 30px; 
     text-align: center;
 }
+
 
 
 /* Footer */
@@ -225,61 +323,7 @@ footer p {
     }
 }
 
-@media (max-width: 768px) {
-    header .top-bar {
-        justify-content: center; 
-        text-align: center;
-    }
-    .top-bar .contact-info {
-         width: 100%; 
-         margin-bottom: 10px; 
-         text-align: center;
-    }
-    .top-bar .social-links {
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .top-bar .perfil-button {
-        margin: 0 auto; 
-    }
 
-    header nav {
-        flex-direction: column; 
-        align-items: center;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-    header .main-menu {
-        flex-direction: column; 
-        align-items: center;
-        width: 100%;
-        margin-top: 15px;
-        gap: 15px; 
-    }
-    header .main-menu li {
-        width: 100%;
-        text-align: center;
-    }
-    header .main-menu li a {
-        padding: 10px; 
-    }
-     header .Support-button a {
-         display: block; 
-         width: 80%;
-         margin: 0 auto; 
-     }
-
-    .main-content {
-       
-        padding: 15px;
-        gap: 20px; 
-    }
-    .image-container, .shortcuts {
-        flex-basis: 100%; 
-        min-width: unset; 
-    }
-}
 
 @media (max-width: 480px) {
     header .top-bar {
